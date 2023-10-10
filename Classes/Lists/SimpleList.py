@@ -45,7 +45,7 @@ class SimpleList:
             return
         copy_head = self.head
         while copy_head.next is not None:
-            if copy_head.next.data >= data:
+            if copy_head.next.data == data:
                 break
             copy_head = copy_head.next
         if copy_head.next is not None and copy_head.next.data == data:
