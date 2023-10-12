@@ -1,7 +1,7 @@
-from Classes.Lists.SimpleList import SimpleList
-from Classes.Lists.LinkedList import ListLinked
+from Classes.Lists.LinkedList import LinkedList
+from Classes.Lists.Doubly_LinkedList import DoublyLinkedList
 from Classes.Lists.CircularList import CircularList
-from Classes.Lists.DoublyLinkedList import CircularDoublyLinkedList
+from Classes.Lists.DoublyCircle_LinkedList import DoublyCircleLinkedList
 
 
 exit_program = False
@@ -11,7 +11,7 @@ while not exit_program:
     option = int(input("Ingresa una opción (1 - 5): "))
     print()
     if option == 1:
-        s_list = SimpleList()
+        s_list = LinkedList()
         s_list.add(1)
         s_list.add(10)
         s_list.add(100)
@@ -22,7 +22,7 @@ while not exit_program:
         s_list.delete(1)
         s_list.show()
         s_list.search(1)
-        input()
+        print()
     elif option == 2:
 
         c_list = CircularList()
@@ -36,24 +36,24 @@ while not exit_program:
         c_list.delete(1)
         c_list.show()
         c_list.search(1)
-        input()
+        print()
     elif option == 3:
 
-        l_list = ListLinked()
-        l_list.add(1)
-        l_list.add(10)
-        l_list.add(100)
-        l_list.add(1000)
-        l_list.add(10000)
-        l_list.show()
-        l_list.search(100)
-        l_list.delete(1)
-        l_list.show()
-        l_list.search(1)
-        input()
+        doubly_list = DoublyLinkedList()
+        doubly_list.add(1)
+        doubly_list.add(10)
+        doubly_list.add(100)
+        doubly_list.add(1000)
+        doubly_list.add(10000)
+        doubly_list.show()
+        doubly_list.search(100)
+        doubly_list.delete(1)
+        doubly_list.show()
+        doubly_list.search(1)
+        print()
     elif option == 4:
 
-        cd_list = CircularDoublyLinkedList()
+        cd_list = DoublyCircleLinkedList()
         cd_list.add(1)
         cd_list.add(10)
         cd_list.add(100)
@@ -64,7 +64,7 @@ while not exit_program:
         cd_list.delete(1)
         cd_list.show()
         cd_list.search(1)
-        input()
+        print()
     elif option == 5:
         input("Fin del programa...")
         exit_program = True

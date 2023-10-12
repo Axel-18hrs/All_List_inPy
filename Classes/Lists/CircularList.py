@@ -2,71 +2,113 @@ from Classes.Node import Node
 
 
 class CircularList:
+
     def __init__(self):
         self.head = None
-        self.last_node = None
+        self.tail = None
 
-    def add(self, data):
-        new_node = Node(data)
-        if self.is_empty():
+    def add(self, value):
+        new_node = Node(value)
+
+        # case 1: List is empty
+        if self.head is None:
+            self.tail = new_node
             self.head = new_node
-            self.head.next = self.head
-            self.last_node = self.head
-        else:
-            self.last_node.next = new_node
             new_node.next = self.head
-            self.last_node = new_node
+            return
+
+        # case 2: List is not empty
+        self.tail.next = new_node
+        new_node.next = self.head
+        self.tail = new_node
 
     def delete(self, data):
-        copy_head = self.head
-        copy_head_tracking = None
-        search = False
-        if self.is_empty():
-            return
-        while not search or copy_head != self.head:
-            if copy_head.data == data:
-                if copy_head == self.head:
-                    self.head = self.head.next
-                    self.last_node.next = self.head
-                elif copy_head == self.last_node:
-                    copy_head_tracking.next = self.head
-                    self.last_node = copy_head_tracking
-                else:
-                    copy_head_tracking.next = copy_head.next
-                search = True
-            copy_head_tracking = copy_head
-            copy_head = copy_head.next
-        if not search:
+        # case 1: the head has the courage to delete
+        if self.head.data == data:
+            self.head = self.head.next
+
+        # case 2: Any of the following nodes has the value to be deleted
+        current_node = self.head
+        while current_node.next is not self.head:
+            if current_node.next.data == data:
+                # caso 2.1: cuando el nodo a eliminar es la cola de la lista
+                if current_node.next == self.tail:
+                    current_node.next = self.tail.next
+                    self.tail = current_node
+                    return
+                current_node.next = current_node.next.next
+                return
+            current_node = current_node.next
+
+        # case 3: When we reached the end of the list and it was not found
+        print("Doesn't search")
+
+    def transverse(self):
+        # case 1: List is empty
+        if self.head is None:
+            print("List is empty")
             return
 
+        # case 2: List is not empty or is not None
+        current_node = self.head
+        while True:
+            print(current_node.data)
+            current_node = current_node.next
+            if current_node is self.head:
+                break
+
+    def exist(self, data):
+        # case 1: List is empty
+        if self.head is None:
+            print("List is empty")
+            return False
+
+        # case 2: List is not empty or is not None
+        current_node = self.head
+        while True:
+            if current_node.data == data:
+                return True
+            current_node = current_node.next
+            if current_node is self.head:
+                break
+
+        # case 3: We reached the end and found nothing
+        return False
+
+    # made by israel and refactored for me
     def search(self, data):
-        copy_head = self.head
-        if self.is_empty():
+        # case 1: List is empty
+        if self.head is None:
+            print("List is empty")
             return
 
-        while copy_head.next != self.head:
-            if copy_head.data == data:
+        # case 2: List is not empty or is not None
+        current_node = self.head
+        while True:
+            # case 2.1: We reached the end and found nothing
+            if current_node.data == data:
                 print(f"- Dato[{data}] Existe en la lista")
                 return
-            copy_head = copy_head.next
-        print(f"- Dato[{data}] No Existe en la lista")
-        return
 
+            current_node = current_node.next
+            if current_node is self.head:
+                print(f"- Dato[{data}] No Existe en la lista")
+                return
+    
     def show(self):
-        if self.is_empty():
-            print("Lista vacía")
+        # case 1: List is empty
+        if self.head is None:
+            print("List is empty")
             return
-        copy_head = self.head
-        i = 1
+
+        # case 2: List is not empty or is not None
         print("=== Mi lista Circular ===")
-        while copy_head.next != self.head:
-            print(f"- Nodo[{i}] y dato: {copy_head.data}")
-            copy_head = copy_head.next
+        i = 1
+        current_node = self.head
+        while True:
+            print(f"- Nodo[{i}] y dato: {current_node.data}")
+            current_node = current_node.next
             i += 1
-        return
-
-    def is_empty(self):
-        return self.head is None
-
-    def clear(self):
-        self.head = None
+            if current_node is self.head:
+                break
+                
