@@ -1,7 +1,8 @@
 from Classes.Node import Node
+from Classes.Lists.Lists_Interface import ListBase
 
 
-class LinkedList:
+class LinkedList(ListBase):
 
     def __init__(self):
         self.head = None
@@ -24,6 +25,7 @@ class LinkedList:
         while current_node.next is not None:
             current_node = current_node.next
         current_node.next = new_node
+        pass
 
     def delete(self, data):
         # case 1: the head has the courage to remove
@@ -41,6 +43,7 @@ class LinkedList:
 
         # case 3: When we reached the end of the list and it was not found
         print("Doesn't exist")
+        pass
 
     def transverse(self):
         # case 1: List is empty
@@ -53,6 +56,10 @@ class LinkedList:
         while current_node is not None:
             print(current_node.data)
             current_node = current_node.next
+        pass
+
+    def transverse_reverse(self):
+        pass
 
     def exist(self, data):
         # case 1: List is empty
@@ -69,6 +76,7 @@ class LinkedList:
 
         # case 3: We reached the end and found nothing
         return False
+        pass
 
     # Made for israel and refactored for me
     def search(self, data):
@@ -87,6 +95,7 @@ class LinkedList:
 
         # case 3: The value is not in the list
         print(f"- Dato[{data}] No Existe en la lista")
+        pass
 
     def show(self):
         # case 1: List is empty
@@ -104,3 +113,4 @@ class LinkedList:
             i += 1
             if current_node is None:
                 break
+        pass

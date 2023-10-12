@@ -1,7 +1,8 @@
 from Classes.Node import Node
+from Classes.Lists.Lists_Interface import ListBase
 
 
-class CircularList:
+class CircularList(ListBase):
 
     def __init__(self):
         self.head = None
@@ -21,6 +22,7 @@ class CircularList:
         self.tail.next = new_node
         new_node.next = self.head
         self.tail = new_node
+        pass
 
     def delete(self, data):
         # case 1: the head has the courage to delete
@@ -42,6 +44,7 @@ class CircularList:
 
         # case 3: When we reached the end of the list and it was not found
         print("Doesn't search")
+        pass
 
     def transverse(self):
         # case 1: List is empty
@@ -56,6 +59,10 @@ class CircularList:
             current_node = current_node.next
             if current_node is self.head:
                 break
+        pass
+
+    def transverse_reverse(self):
+        pass
 
     def exist(self, data):
         # case 1: List is empty
@@ -74,6 +81,7 @@ class CircularList:
 
         # case 3: We reached the end and found nothing
         return False
+        pass
 
     # made by israel and refactored for me
     def search(self, data):
@@ -94,6 +102,7 @@ class CircularList:
             if current_node is self.head:
                 print(f"- Dato[{data}] No Existe en la lista")
                 return
+        pass
     
     def show(self):
         # case 1: List is empty
@@ -111,4 +120,5 @@ class CircularList:
             i += 1
             if current_node is self.head:
                 break
+        pass
                 

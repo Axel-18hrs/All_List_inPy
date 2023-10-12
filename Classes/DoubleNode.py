@@ -1,6 +1,9 @@
-class Node:
+from Classes.Node import Node
+
+
+class DoubleNode(Node):
 
     def __init__(self, data):
-        self.data = data
-        self.next = None
+        Node.__init__(self, data)
         self.prev = None
+
