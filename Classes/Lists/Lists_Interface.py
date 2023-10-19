@@ -1,34 +1,44 @@
 from abc import ABC, abstractmethod
 
 
-class ListBase(ABC):
+class ListOperations(ABC):
 
     @abstractmethod
     def add(self, value):
-        raise NotImplementedError("function 'add' has not been implemented")
+        raise NotImplementedError("The 'add' function is not used")
 
     @abstractmethod
     def delete(self, data):
-        raise NotImplementedError("function 'delete' has not been implemented")
+        raise NotImplementedError("The 'delete' function is not used")
 
     @abstractmethod
     def transverse(self):
-        raise NotImplementedError("function 'transverse' has not been implemented")
+        raise NotImplementedError("The 'transverse' function is not used")
 
     @abstractmethod
     def transverse_reverse(self):
-        raise NotImplementedError("function 'transverse_reverse' has not been implemented")
+        raise NotImplementedError("The 'transverse_reverse' function is not used")
 
     @abstractmethod
     def exist(self, data):
-        raise NotImplementedError("function 'exist' has not been implemented")
+        raise NotImplementedError("The 'exist' function is not used")
 
     @abstractmethod
     def show(self):
-        raise NotImplementedError("function 'show' has not been implemented")
+        raise NotImplementedError("The 'show' function is not used")
+
+    @abstractmethod
+    def show_reverse(self):
+        raise NotImplementedError("The 'show_reverse' function is not used")
 
     @abstractmethod
     def search(self, data):
-        raise NotImplementedError("function 'search' has not been implemented")
+        raise NotImplementedError("The 'search' function is not used")
 
+    @abstractmethod
+    def is_empty(self):
+        raise NotImplementedError("The 'is_empty' function is not used")
 
+    @abstractmethod
+    def clear(self):
+        raise NotImplementedError("The 'clear' function is not used")
