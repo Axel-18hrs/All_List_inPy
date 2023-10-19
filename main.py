@@ -84,5 +84,10 @@ while True:
           "[4] Lista circular doble enlazada.\n" +
           "[5] Salir.")
 
-    operation(int(input("Ingresa una opción (1 - 5): ")))
-    print()
+    try:
+        operation(int(input("Ingresa una opción (1 - 5): ")))
+
+    except ValueError:
+        print()
+        input("Ingresa un valor de (1 a 5)...")
+        print("\n" * 10)
