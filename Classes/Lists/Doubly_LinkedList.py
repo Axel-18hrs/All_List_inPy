@@ -63,11 +63,11 @@ class DoublyLinkedList(ListOperations):
 
         # case 2: Any of the following nodes has the value to be removed
         current_node = self.head
-        while current_node.next is not self.head and current_node.next.data < data:
+        while current_node.next is not None and current_node.next.data < data:
             current_node = current_node.next
 
         # case 4: When the value to be removed is not the tail of the list
-        if current_node.next.data == data:
+        if current_node.data == data:
             print(f"- Dato[{data}] Se elimino de la lista")
             current_node.next.next.back = current_node
             current_node.next = current_node.next.next

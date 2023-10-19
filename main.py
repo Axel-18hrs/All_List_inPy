@@ -1,4 +1,3 @@
-import os
 import sys
 import random
 from Classes.Lists.LinkedList import LinkedList
@@ -78,7 +77,6 @@ def operation(value):
 
 
 while True:
-    os.system("cls")
     print("# Ver todas las Listas #\n" +
           "[1] Lista simple.\n" +
           "[2] Lista circular.\n" +
@@ -88,4 +86,3 @@ while True:
 
     operation(int(input("Ingresa una opción (1 - 5): ")))
     print()
-
