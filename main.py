@@ -1,71 +1,41 @@
 import sys
-import random
 from Classes.Lists.LinkedList import LinkedList
 from Classes.Lists.Doubly_LinkedList import DoublyLinkedList
 from Classes.Lists.Circle_LinkedList import CircleLinkedList
 from Classes.Lists.DoublyCircle_LinkedList import DoublyCircleLinkedList
+from Classes.Auto import Auto
 
 
 def operation(value):
+    automatic = Auto()
     match value:
+
         case 1:
             s_list = LinkedList()
-            s_list.add(random.randint(1, 1000))
-            s_list.add(random.randint(1, 1000))
-            s_list.add(random.randint(1, 1000))
-            s_list.add(random.randint(1, 1000))
-            s_list.add(random.randint(1, 1000))
-            s_list.show()
-            s_list.search(random.randint(1, 1000))
-            s_list.delete(random.randint(1, 1000))
-            s_list.show()
-            s_list.search(random.randint(1, 1000))
+            automatic.Auto_Add_LinkedList(s_list)
+            automatic.Auto_Delete_LinkedList(s_list)
+            automatic.Auto_Search_LinkedList(s_list)
             print()
 
         case 2:
             c_list = CircleLinkedList()
-            c_list.add(random.randint(1, 1000))
-            c_list.add(random.randint(1, 1000))
-            c_list.add(random.randint(1, 1000))
-            c_list.add(random.randint(1, 1000))
-            c_list.add(random.randint(1, 1000))
-            c_list.show()
-            c_list.search(random.randint(1, 1000))
-            c_list.delete(random.randint(1, 1000))
-            c_list.show()
-            c_list.search(random.randint(1, 1000))
+            automatic.Auto_Add_CircleLinkedList(c_list)
+            automatic.Auto_Delete_CircleLinkedList(c_list)
+            automatic.Auto_Search_CircleLinkedList(c_list)
             print()
 
         case 3:
             doubly_list = DoublyLinkedList()
-            doubly_list.add(random.randint(1, 1000))
-            doubly_list.add(random.randint(1, 1000))
-            doubly_list.add(random.randint(1, 1000))
-            doubly_list.add(random.randint(1, 1000))
-            doubly_list.add(random.randint(1, 1000))
-            doubly_list.show()
-            doubly_list.show_reverse()
-            doubly_list.search(random.randint(1, 1000))
-            doubly_list.delete(random.randint(1, 1000))
-            doubly_list.show()
-            doubly_list.show_reverse()
-            doubly_list.search(random.randint(1, 1000))
+            automatic.Auto_Add_DoublyLinkedList(doubly_list)
+            automatic.Auto_Delete_DoublyLinkedList(doubly_list)
+            automatic.Auto_Search_DoublyListLinked(doubly_list)
             print()
 
         case 4:
             cd_list = DoublyCircleLinkedList()
-            cd_list.add(random.randint(1, 1000))
-            cd_list.add(random.randint(1, 1000))
-            cd_list.add(random.randint(1, 1000))
-            cd_list.add(random.randint(1, 1000))
-            cd_list.add(random.randint(1, 1000))
-            cd_list.show()
-            cd_list.show_reverse()
-            cd_list.search(random.randint(1, 1000))
-            cd_list.delete(random.randint(1, 1000))
-            cd_list.show()
-            cd_list.show_reverse()
-            cd_list.search(random.randint(1, 1000))
+            automatic.Auto_Add_DoublyCircleLinkedList(cd_list)
+            automatic.Auto_Delete_DoublyCircleLinkedList(cd_list)
+            automatic.Auto_Search_DoublyCircleLinkedList(cd_list)
             print()
 
         case 5:

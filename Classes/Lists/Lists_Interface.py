@@ -12,14 +12,6 @@ class ListOperations(ABC):
         raise NotImplementedError("The 'delete' function is not used")
 
     @abstractmethod
-    def transverse(self):
-        raise NotImplementedError("The 'transverse' function is not used")
-
-    @abstractmethod
-    def transverse_reverse(self):
-        raise NotImplementedError("The 'transverse_reverse' function is not used")
-
-    @abstractmethod
     def exist(self, data):
         raise NotImplementedError("The 'exist' function is not used")
 

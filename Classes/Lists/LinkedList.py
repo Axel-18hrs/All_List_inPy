@@ -7,20 +7,20 @@ class LinkedList(ListOperations):
     def __init__(self):
         self.head = None
 
-    def add(self, value):
-        new_node = Node(value)
+    def add(self, data):
+        new_node = Node(data)
 
         # case 1: List is empty
         if self.is_empty():
             self.head = new_node
             return
 
-        # case 2: The value already exists
-        if self.exist(value):
-            print(f"- [{value}] Ya existe en la lista")
+        # case 2: The data already exists
+        if self.exist(data):
+            print(f"- [{data}] Ya existe en la lista")
             return
 
-        # case 3: Head has a value greater than that of the new node
+        # case 3: Head has a data greater than that of the new node
         if self.head.data > new_node.data:
             new_node.next = self.head
             self.head = new_node
@@ -35,41 +35,30 @@ class LinkedList(ListOperations):
         pass
 
     def delete(self, data):
-        # case 1: the head has the courage to remove
+        # case 1: List is empty
+        if self.is_empty():
+            print("// La lista esta vacia")
+            return
+
+        # case 2: the head has the courage to remove
         if self.head.data == data:
             print(f"- Dato[{data}] Se elimino de la lista")
             self.head = self.head.next
             return
 
-        # case 2: Any of the following nodes has the value to be removed
+        # case 3: Any of the following nodes has the data to be removed
         current_node = self.head
         while current_node.next is not None and current_node.next.data < data:
             current_node = current_node.next
 
-        # case 3: The node to be deleted was found
+        # case 4: The node to be deleted was found
         if current_node.next.data == data:
             print(f"- Dato[{data}] Se elimino de la lista")
             current_node.next = current_node.next.next
             return
 
-        # case 4: Node not found
+        # case 5: Node not found
         print(f"- Dato[{data}] No Existe en la lista")
-        pass
-
-    def transverse(self):
-        # case 1: List is empty
-        if self.is_empty():
-            print("// La lista esta vacía")
-            return
-
-        # case 2: List is not empty or is not None
-        current_node = self.head
-        while current_node is not None:
-            print(current_node.data)
-            current_node = current_node.next
-        pass
-
-    def transverse_reverse(self):
         pass
 
     def exist(self, data):
@@ -78,16 +67,16 @@ class LinkedList(ListOperations):
             print("// La lista esta vacía")
             return False
 
-        # case 2: The 'head' node contains the value
+        # case 2: The 'head' node contains the data
         if self.head.data == data:
             return True
 
-        # case 3: Any node in the list can have the value
+        # case 3: Any node in the list can have the data
         current_node = self.head
         while current_node.next is not None and current_node.next.data <= data:
             current_node = current_node.next
 
-        # case 4: The value already exists in the list
+        # case 4: The data already exists in the list
         if current_node.data == data:
             return True
 
@@ -95,24 +84,23 @@ class LinkedList(ListOperations):
         return False
         pass
 
-    # Made for israel and refactored for me
     def search(self, data):
         # case 1: List is empty
         if self.is_empty():
             print("// La lista esta vacía")
             return False
 
-        # case 2: The 'head' node contains the value
+        # case 2: The 'head' node contains the data
         if self.head.data == data:
             print(f"- Dato[{data}] Existe en la lista")
             return
 
-        # case 3: Any node in the list can have the value
+        # case 3: Any node in the list can have the data
         current_node = self.head
         while current_node.next is not None and current_node.next.data <= data:
             current_node = current_node.next
 
-        # case 4: The value already exists in the list
+        # case 4: The data already exists in the list
         if current_node.data == data:
             print(f"- Dato[{data}] Existe en la lista")
             return
@@ -130,7 +118,7 @@ class LinkedList(ListOperations):
 
         # case 2: List is not empty or is not None
         print("=== Mi lista simple ===")
-        i = 1
+        i = 0
         current_node = self.head
         while True:
             print(f"- Nodo[{i}] y dato: {current_node.data}")
