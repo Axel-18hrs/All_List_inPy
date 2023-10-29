@@ -149,7 +149,7 @@ class DoublyLinkedList(ListOperations):
     def search(self, data):
         # case 1: List is empty
         if self.is_empty():
-            print("List is empty")
+            print("// La lista esta vacía")
             return
 
         # case 2: The 'head' node contains the data
