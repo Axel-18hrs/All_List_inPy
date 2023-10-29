@@ -8,8 +8,8 @@ class ListOperations(ABC):
         raise NotImplementedError("The 'add' function is not used")
 
     @abstractmethod
-    def delete(self, data):
-        raise NotImplementedError("The 'delete' function is not used")
+    def remove(self, data):
+        raise NotImplementedError("The 'remove' function is not used")
 
     @abstractmethod
     def exist(self, data):

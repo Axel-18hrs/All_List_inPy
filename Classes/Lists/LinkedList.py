@@ -34,7 +34,7 @@ class LinkedList(ListOperations):
         current_node.next = new_node
         pass
 
-    def delete(self, data):
+    def remove(self, data):
         # case 1: List is empty
         if self.is_empty():
             print("// La lista esta vacia")
@@ -51,7 +51,7 @@ class LinkedList(ListOperations):
         while current_node.next is not None and current_node.next.data < data:
             current_node = current_node.next
 
-        # case 4: The node to be deleted was found
+        # case 4: The node to be removed was found
         if current_node.next.data == data:
             print(f"- Dato[{data}] Se elimino de la lista")
             current_node.next = current_node.next.next

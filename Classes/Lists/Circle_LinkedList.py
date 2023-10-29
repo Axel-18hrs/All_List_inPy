@@ -46,7 +46,7 @@ class CircleLinkedList(ListOperations):
         current_node.next = new_node
         pass
 
-    def delete(self, data):
+    def remove(self, data):
         # case 1: List is empty
         if self.is_empty():
             print("// La lista esta vacia")

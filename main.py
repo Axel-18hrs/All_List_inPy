@@ -13,28 +13,28 @@ def operation(value):
         case 1:
             s_list = LinkedList()
             automatic.Auto_Add_LinkedList(s_list)
-            automatic.Auto_Delete_LinkedList(s_list)
+            automatic.Auto_Remove_LinkedList(s_list)
             automatic.Auto_Search_LinkedList(s_list)
             print()
 
         case 2:
             c_list = CircleLinkedList()
             automatic.Auto_Add_CircleLinkedList(c_list)
-            automatic.Auto_Delete_CircleLinkedList(c_list)
+            automatic.Auto_Remove_CircleLinkedList(c_list)
             automatic.Auto_Search_CircleLinkedList(c_list)
             print()
 
         case 3:
             doubly_list = DoublyLinkedList()
             automatic.Auto_Add_DoublyLinkedList(doubly_list)
-            automatic.Auto_Delete_DoublyLinkedList(doubly_list)
+            automatic.Auto_Remove_DoublyLinkedList(doubly_list)
             automatic.Auto_Search_DoublyListLinked(doubly_list)
             print()
 
         case 4:
             cd_list = DoublyCircleLinkedList()
             automatic.Auto_Add_DoublyCircleLinkedList(cd_list)
-            automatic.Auto_Delete_DoublyCircleLinkedList(cd_list)
+            automatic.Auto_Remove_DoublyCircleLinkedList(cd_list)
             automatic.Auto_Search_DoublyCircleLinkedList(cd_list)
             print()
 

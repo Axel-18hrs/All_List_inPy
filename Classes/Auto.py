@@ -9,10 +9,10 @@ class Auto:
             LinkedList.add(random.randint(0, 24))
         LinkedList.show()
 
-    def Auto_Delete_LinkedList(self, LinkedList):
+    def Auto_Remove_LinkedList(self, LinkedList):
         cant = int(input("Cuantos datos quieres borrar: "))
         for i in range(cant):
-            LinkedList.delete(random.randint(0, 24))
+            LinkedList.remove(random.randint(0, 24))
         LinkedList.show()
 
     def Auto_Search_LinkedList(self, LinkedList):
@@ -26,10 +26,10 @@ class Auto:
             CircleLinkedList.add(random.randint(0, 24))
         CircleLinkedList.show()
 
-    def Auto_Delete_CircleLinkedList(self, CircleLinkedList):
+    def Auto_Remove_CircleLinkedList(self, CircleLinkedList):
         cant = int(input("Cuantos datos quieres borrar: "))
         for i in range(cant):
-            CircleLinkedList.delete(random.randint(0, 24))
+            CircleLinkedList.remove(random.randint(0, 24))
         CircleLinkedList.show()
 
     def Auto_Search_CircleLinkedList(self, CircleLinkedList):
@@ -44,10 +44,10 @@ class Auto:
         DoublyLinkedList.show()
         DoublyLinkedList.show_reverse()
 
-    def Auto_Delete_DoublyLinkedList(self, DoublyLinkedList):
+    def Auto_Remove_DoublyLinkedList(self, DoublyLinkedList):
         cant = int(input("Cuantos datos quieres borrar: "))
         for i in range(cant):
-            DoublyLinkedList.delete(random.randint(0, 24))
+            DoublyLinkedList.remove(random.randint(0, 24))
         DoublyLinkedList.show()
         DoublyLinkedList.show_reverse()
 
@@ -63,10 +63,10 @@ class Auto:
         DoublyCircleLinkedList.show()
         DoublyCircleLinkedList.show_reverse()
 
-    def Auto_Delete_DoublyCircleLinkedList(self, DoublyCircleLinkedList):
+    def Auto_Remove_DoublyCircleLinkedList(self, DoublyCircleLinkedList):
         cant = int(input("Cuantos datos quieres borrar: "))
         for i in range(cant):
-            DoublyCircleLinkedList.delete(random.randint(0, 24))
+            DoublyCircleLinkedList.remove(random.randint(0, 24))
         DoublyCircleLinkedList.show()
         DoublyCircleLinkedList.show_reverse()
 
